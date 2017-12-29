@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
     HomeComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'my-app'}),
+    BrowserModule.withServerTransition({appId: 'ng-ssr-on-aws-lambda'}),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full'},
       { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},

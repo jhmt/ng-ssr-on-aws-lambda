@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 .vscode
+.serverless
 morgan.log
 
 # Built #

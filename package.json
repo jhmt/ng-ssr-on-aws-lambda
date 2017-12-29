@@ -14,9 +14,10 @@
     "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "generate:prerender": "cd dist && node prerender",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "webpack:server": "webpack --config server/webpack.config.js --progress --colors",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server"
+    "serve:ssr": "node dist/server/start.js",
+    "deploy": "serverless deploy --stage prod"
   },
   "private": true,
   "dependencies": {
@@ -32,8 +33,13 @@
     "@angular/router": "^5.0.0",
     "@nguniversal/express-engine": "^5.0.0-beta.5",
     "@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.5",
+    "@types/aws-serverless-express": "^2.1.2",
+    "aws-serverless-express": "^3.0.2",
+    "copy-webpack-plugin": "^4.3.1",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
+    "serverless": "^1.25.0",
+    "serverless-webpack": "^4.2.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
