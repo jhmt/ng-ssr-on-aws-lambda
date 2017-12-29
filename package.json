@@ -11,13 +11,16 @@
     "start": "ng serve",
     "build": "ng build",
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
-    "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
+    "build:client-and-server-bundles-dev": "ng build --prod --base-href /dev/ && ng build --prod --app 1 --output-hashing=false --base-href /dev/",
+    "build:client-and-server-bundles-prod": "ng build --prod --base-href /prod/ && ng build --prod --app 1 --output-hashing=false --base-href /prod/",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
-    "generate:prerender": "cd dist && node prerender",
+    "build:ssr-dev": "npm run build:client-and-server-bundles-dev && npm run webpack:server",
+    "build:ssr-prod": "npm run build:client-and-server-bundles-prod && npm run webpack:server",
     "webpack:server": "webpack --config server/webpack.config.js --progress --colors",
     "serve:prerender": "cd dist/browser && http-server",
     "serve:ssr": "node dist/server/start.js",
-    "deploy": "serverless deploy --stage prod"
+    "deploy:dev": "serverless deploy",
+    "deploy:prod": "serverless deploy --stage prod"
   },
   "private": true,
   "dependencies": {
