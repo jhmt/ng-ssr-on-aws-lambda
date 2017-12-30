@@ -4,7 +4,7 @@ const copyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    server: join(__dirname, 'index.ts'),
+    server: join(__dirname, 'server.ts'),
     start: join(__dirname, 'start.ts'),
   },
 
