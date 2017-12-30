@@ -1,6 +1,6 @@
 # Angular Server Side Rendering on AWS Lambda
 
-### prerequesite
+### Prerequesites
 * Node.js (version 6.9.1 or upper)
 * AWS account (for deploying to AWS Lambda)
 
